@@ -1,0 +1,71 @@
+mutation{
+  createTodo(input:{
+    title: "test"
+  }){
+    ok
+    todo{
+      id
+      title
+    }
+  }
+}
+
+
+mutation{
+  updateTodoState(id:1, input:{
+    state: "done"
+  }){
+    ok
+    todo{
+      id
+      title
+    }
+  }
+}
+
+mutation{
+  deleteTodo(id:1){
+    ok
+    todo{
+      id
+      title
+    }
+  }
+}
+
+query{
+  currentUser{
+    id
+  }
+}
+
+
+query{
+  users{
+    id
+  }
+}
+
+query{
+  userTodos{
+    title
+  }
+}
+
+mutation {
+  userCreateTodo(title: "alice") {
+    todo {
+      id
+      title
+    }
+  }
+}
+
+mutation {
+  userUpdateTodoState(id:17, state: "done") {
+    todo {
+      id
+      title
+    }
+  }
+}
